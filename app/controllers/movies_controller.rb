@@ -1,4 +1,4 @@
-class MovieController < ApplicationController
+class MoviesController < ApplicationController
   # GET /movies
   def index
     @movies = Movie.all
