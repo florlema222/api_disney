@@ -1,4 +1,6 @@
 class CharactersController < ApplicationController
+  before_action :set_character, only: %i[show update destroy]
+
   # GET /characters
   def index
     @characters = Character.all
@@ -44,6 +46,6 @@ class CharactersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def character_params
-    params.require(:character).permit(:name, :age, :weight, :history, :movie_id)
+    params.require(:character).permit(:name, :age, :weight, :history, :movie_id, :image_url)
   end
 end
