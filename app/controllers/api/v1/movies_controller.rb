@@ -1,9 +1,8 @@
-class MoviesController < ApplicationController
+class Api::V1::MoviesController < ApplicationController
   before_action :set_movie, only: %i[show update destroy]
   # GET /movies
   def index
     @movies = Movie.all
-
     render json: @movies
   end
 
