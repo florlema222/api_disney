@@ -4,13 +4,12 @@ class Api::V1::CharactersController < ApplicationController
   # GET /characters
   def index
     @characters = Character.all
-
-    render json: @characters.include[:characters], only: [:name, :image_url]
+    render json: @characters, only: [:name, :image_url]
   end
 
   # GET /characters/1
   def show
-    render json: @character
+    render json: @character, include: [:movie]
   end
 
   # POST /characters
