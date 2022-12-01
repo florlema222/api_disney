@@ -3,6 +3,7 @@ class Api::V1::MoviesController < ApplicationController
   # GET /movies
   def index
     @movies = Movie.all
+    debugger
     render json: @movies, only: [:title, :creation_date, :image_url]
   end
 
